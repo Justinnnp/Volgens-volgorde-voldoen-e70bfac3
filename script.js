@@ -18,13 +18,14 @@ function check() {
         document.getElementById("input5").value
     ]
     if (arrayAnswers[0] == values[0] && arrayAnswers[1] == values[1] && arrayAnswers[2] == values[2] && arrayAnswers[3].includes(values[3]) && arrayAnswers[4].includes(values[4])) {
-        document.getElementById("answer").innerText = "Je hebt alles goed!";
-        document.getElementById("input1").style.background = "green";
-        document.getElementById("input2").style.background = "green";
-        document.getElementById("input3").style.background = "green";
-        document.getElementById("input4").style.background = "green";
-        document.getElementById("input5").style.background = "green";
-    } else {
-        document.getElementById("answer").innerText = "Vul alle juiste antwoorden op de goede plekker in!";
+
+        for (i = 0; i < arrayAnswers.length; i++) {
+            document.getElementById("answer").innerText = `Je hebt ${[i]} antwoorden goed!`;
+            document.getElementById("input1").style.background = "green";
+            document.getElementById("input2").style.background = "green";
+            document.getElementById("input3").style.background = "green";
+            document.getElementById("input4").style.background = "green";
+            document.getElementById("input5").style.background = "green";
+        }
     }
 }
